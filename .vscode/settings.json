@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "sim.h": "c",
+        "fenv.h": "c"
+    }
+}
