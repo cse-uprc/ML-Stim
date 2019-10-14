@@ -31,13 +31,10 @@ double gaussrand()
 
 	x /= NSUM;
     x = x*2-1;
-    // printf("%f\n",x);
 	return x;
 }
 
 float sigmoid(float x){
-    // 
-
      float exp_value;
      float return_value;
 
@@ -52,7 +49,6 @@ float sigmoid(float x){
 
 void initNN(NeuralNetwork* NN){
     // Initialization function for the Nueral Network
-
     srand(time(0));
 
     // For each vector, generate normal random values between -1 and 1
@@ -70,30 +66,23 @@ void initNN(NeuralNetwork* NN){
     {
         NN->outBias[i] = gaussrand();
     }
-};
+}
 
 void createVar(NeuralNetwork* NN1, NeuralNetwork* NN2)
 {
-    //
-    // printf("%f\n\n", (1.0 + (((float)(rand() % 1000) - 500.0) / 10000.0)));
-    //
     for (int i = 0; i < 4; i++)
     {
         NN2->hBias[i] = NN1->hBias[i] * (1.0 + (((float)(rand() % 2000) - 1000.0) / 10000.0));
-        // printf("hBias - %f\n",NN2->hBias[i]);
         for (int j = 0; j < 11; j++)
         {
             NN2->outWeightVector[i][j] = NN1->outWeightVector[i][j] * (1.0 + (((float)(rand() % 2000) - 1000.0) / 10000.0));
-            // printf("outWeightVec - %f\n", NN2->outWeightVector[i][j]);
         }
         NN2->hWeightVector[i] = NN1->hWeightVector[i] * (1.0 + (((float)(rand() % 2000) - 1000.0) / 10000.0));
-        // printf("hWeightVec - %f\n", NN2->hWeightVector[i]);
     }
 
     for (int i = 0; i < 11; i++)
     {
         NN2->outBias[i] =  NN1->outBias[i] * (1.0 + (((float)(rand() % 2000) - 1000.0) / 10000.0));
-        // printf("outBias - %f\n", NN2->outBias[i]);
     }
 }
 
@@ -103,7 +92,7 @@ void calcFwd(NeuralNetwork* NN){
     // Generate a random number (randomly chosen)
     double initVal = gaussrand();
 
-    // node * weight + bias
+    // sigmoid(node * weight + bias)
     for (int i = 0; i < 4; i++)
     {
         NN->hNodes[i] = sigmoid((initVal * NN->hWeightVector[i]) + NN->hBias[i]);

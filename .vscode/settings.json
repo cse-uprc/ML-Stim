@@ -2,5 +2,6 @@
     "files.associations": {
         "sim.h": "c",
         "fenv.h": "c"
-    }
+    },
+    "python.pythonPath": "C:\\Users\\Joey\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe"
 }

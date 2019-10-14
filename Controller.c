@@ -84,9 +84,9 @@ double testNetwork(NeuralNetwork *NN, float data[10000][205])
 
         env.compartments[i]->v = -65.0;
 
-        env.compartments[i]->m = .0052;
-        env.compartments[i]->h = .0017;
-        env.compartments[i]->n = .0014;
+        env.compartments[i]->m = .052;
+        env.compartments[i]->h = .596;
+        env.compartments[i]->n = .317;
 
         env.compartments[i]->vext = 0;
         //printf("sad\n");

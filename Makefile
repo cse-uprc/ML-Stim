@@ -1,3 +1,5 @@
+all: controller test
+
 controller: Controller.o Sim.o ML.o -lm
 	gcc -g -o controller -fopenmp Controller.o Sim.o Ml.o -lm
 
